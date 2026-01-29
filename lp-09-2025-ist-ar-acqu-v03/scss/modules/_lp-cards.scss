@@ -1,0 +1,96 @@
+.lp-cards {
+  @include lg-up {
+    background-image: var(--bgImage);
+    background-repeat: no-repeat;
+    background-position: 0 -400px;
+    background-size: contain;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    @include md-up {
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    @include lg-up {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    &-card {
+      position: relative;
+      background: rgb(255 255 255 / 47%);
+      box-shadow: 0px 24px 61px -14px #8c8c8c24;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      @include md-up {
+        padding: 25px;
+        gap: 25px;
+      }
+      &-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include md-up {
+          justify-content: flex-start;
+        }
+        img {
+          height: 50px;
+          width: 50px;
+          object-fit: contain;
+          @include md-up {
+            height: 90px;
+            width: 90px;
+          }
+        }
+      }
+      &-content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        h3 {
+          font-size: 18px;
+          line-height: 24px;
+          font-weight: 600;
+          @include md-up {
+            font-size: 22px;
+            line-height: 24px;
+          }
+        }
+        p {
+          font-size: 14px;
+          line-height: 24px;
+          color: #5c5c5c;
+          @include md-up {
+            font-size: 20px;
+            line-height: 30px;
+          }
+        }
+        @include md-up {
+          justify-content: flex-start;
+          align-items: flex-start;
+          text-align: right;
+        }
+      }
+    }
+  }
+  position: relative;
+  .shape-circle {
+    position: absolute;
+    left: 0;
+    top: -100px;
+    height: 230px;
+    @include md-up {
+      height: 480px;
+    }
+    @include xl-up {
+      height: 800px;
+    }
+  }
+}

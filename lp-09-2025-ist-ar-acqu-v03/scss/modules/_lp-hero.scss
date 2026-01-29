@@ -1,0 +1,239 @@
+.lp-hero {
+  background-color: $color__site-primary;
+  overflow: hidden;
+  @include lg-up {
+    background-color: white;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "media" "content";
+    row-gap: 20px;
+    @include lg-up {
+      column-gap: 15px;
+      row-gap: 0;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "content media";
+      grid-template-rows: auto 1fr;
+    }
+  }
+  &__media {
+    grid-area: media;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__content {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    @include lg-up {
+      gap: 30px;
+      text-align: right;
+      align-items: flex-start;
+      justify-content: flex-end;
+    }
+    header {
+      text-align: center;
+      @include lg-up {
+        text-align: right;
+      }
+      h1 {
+        font-size: 30px;
+        color: $color__site-white;
+        @include lg-up {
+          color: #535353;
+        }
+        strong {
+          color: $color__site-secondary;
+          @include lg-up {
+            color: $color__site-primary;
+          }
+        }
+        @include lg-up {
+          font-size: 45px;
+        }
+      }
+      p {
+        font-size: 18px;
+        line-height: 30px;
+        color: #fff;
+        @include lg-up {
+          color: #06364f;
+        }
+        @include lg-up {
+          font-size: 26px;
+          line-height: 44px;
+        }
+      }
+    }
+    .btn-item {
+      width: 100%;
+      a.btn {
+        font-size: 16px;
+        @include sm-up {
+          font-size: 22px;
+        }
+      }
+      @include sm-up {
+        width: auto;
+      }
+    }
+  }
+  &__hero-stats {
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.hero-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    max-height: 100vh;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 10;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      max-height: 80vh;
+      border-radius: 12px;
+      display: block;
+    }
+  }
+}
+.lp-hero-blocks {
+  &__inner {
+    background-color: $color__site-primary;
+    direction: ltr;
+    overflow: hidden;
+    @include sm-up {
+      margin-top: 40px;
+    }
+
+    &__scroll-wrapper {
+      display: flex;
+      align-items: center;
+      animation: continuous-scroll 20s linear infinite;
+      width: max-content;
+
+      @include sm-up {
+        display: block;
+        animation: none;
+        width: 100%;
+      }
+
+      .container {
+        width: 100%;
+
+        @include sm-up {
+          width: min(100% - 40px, 1280px);
+        }
+      }
+
+      .seen-on {
+
+        padding-block: 13px;
+
+        @include sm-up {
+          padding-block: 23px;
+        }
+
+        img {
+          display: block;
+          padding-inline: 15px;
+          height: 30px;
+
+          @include sm-up {
+            padding-inline: 0;
+            height: auto;
+            width: 95%;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 576px) {
+  .sm-only {
+      display: none;
+  }
+}
+@keyframes continuous-scroll {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}

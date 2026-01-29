@@ -1,0 +1,30 @@
+.lp-faq {
+  position: relative;
+  .lp-faq__bg-shape {
+    position: absolute;
+    left: 0;
+    height: auto;
+    z-index: -1;
+    overflow: hidden;
+    width: 150px;
+    transform: translate(-30% , 30%);
+    bottom: 0;
+    @include lg-up{
+      transform: translate(-20% , -50%);
+      top: 50%;
+      bottom: auto;
+      width: 250px;
+    }
+  }
+
+  &__list {
+    border-top: solid 1px #eee;
+    border-bottom: solid 1px #eee;
+  }
+  details.accordion__item{
+    background-color: $color__site-white;
+  }
+  details.accordion__item[open]{
+    background-color: $color__site-primary-light;
+  }
+}

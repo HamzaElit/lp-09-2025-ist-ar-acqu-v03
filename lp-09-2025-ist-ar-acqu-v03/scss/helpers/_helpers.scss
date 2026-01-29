@@ -1,0 +1,119 @@
+//Backgrounds
+.bgPrimary {
+  background-color: $color__site-primary;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul li,
+  span,
+  .embla-bottom-text,
+  a:not(.btn) {
+    color: $color__site-white;
+  }
+
+  .embla__bottom-text {
+    color: $color__site-white;
+  }
+
+  h1 b,
+  h2 b,
+  h3 b,
+  h4 b {
+    color: $color__site-primary-light;
+  }
+
+  .embla__dot {
+    background-color: $color__site-white;
+
+    &--selected {
+      background-color: $color__site-primary-light;
+    }
+  }
+
+  .widthLabel {
+    &::after {
+      color: $color__site-white;
+      border-color: $color__site-white;
+    }
+  }
+
+  .btn-item {
+    a.btn {
+      background-color: $color__site-primary-light;
+      color: $color__site-white;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+
+    span {
+      color: $color__site-white;
+    }
+  }
+}
+.bgLightBlue {
+  background-color: $color__site-primary-light;
+}
+.bgLightGray {
+  background-color: #f5f5f5;
+}
+.customBGimage,
+.customBGimageMobile {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.customBGimage {
+  background-image: var(--bgImage);
+}
+
+.customBGimageMobile {
+  // Mobile-first approach - apply mobile background by default
+  background-image: var(--bgImageMobile);
+
+  @include md-up {
+    // Reset to default background for larger screens if needed
+    background-image: var(--bgImage);
+  }
+}
+
+.hideBgImageMobile {
+  background-image: none; // Mobile-first - hide by default
+
+  @include md-up {
+    background-image: var(--bgImage); // Show on larger screens
+  }
+}
+
+.lp-banner {
+  margin-top: 30px;
+  @include lg-up {
+    margin-top: 50px;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+  &.mobile-only {
+    display: block;
+    @include lg-up {
+      display: none;
+    }
+  }
+  &.desktop-only {
+    display: none;
+    @include lg-up {
+      display: block;
+    }
+  }
+}
+.overflow-hidden {
+  overflow: hidden;
+}
