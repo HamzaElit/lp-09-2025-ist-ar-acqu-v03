@@ -50,7 +50,9 @@
               &:hover {
                 background-color: $color__site-primary;
                 .embla__slide-content {
-                  color: $color__site-white;
+                  h3{
+                    color: $color__site-white !important;
+                  }
                 }
               }
             }
