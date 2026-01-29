@@ -10,7 +10,7 @@
     grid-template-areas: "media" "content";
     row-gap: 20px;
     @include lg-up {
-      column-gap: 15px;
+      column-gap: 70px;
       row-gap: 0;
       grid-template-columns: 1fr 1fr;
       grid-template-areas: "content media";
